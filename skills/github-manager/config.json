@@ -1,0 +1,8 @@
+{
+  "name": "github-manager",
+  "version": "1.0.0",
+  "description": "Manage repos, PRs, issues, and actions from your agent",
+  "author": "Skunk Global",
+  "tags": ["github", "git", "development", "ci-cd", "automation"],
+  "requires": ["gh"]
+}

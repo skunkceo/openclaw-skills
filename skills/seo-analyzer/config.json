@@ -1,0 +1,8 @@
+{
+  "name": "seo-analyzer",
+  "version": "1.0.0",
+  "description": "Analyze pages for SEO issues and get optimization recommendations",
+  "author": "Skunk Global",
+  "tags": ["seo", "analysis", "optimization", "meta-tags", "keywords"],
+  "requires": []
+}
