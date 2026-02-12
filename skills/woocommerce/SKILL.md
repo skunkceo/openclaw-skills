@@ -1,24 +1,47 @@
-# WooCommerce Manager
+# WooCommerce
 
-Manage WooCommerce stores via WP-CLI. Products, orders, customers, coupons, and settings.
+Install and manage WooCommerce stores via WP-CLI. Products, orders, customers, coupons, and settings.
 
 ## When to Use
 
-Use this skill when:
-- Managing products, inventory, and pricing
-- Processing or updating orders
-- Managing customer accounts
-- Creating and managing coupons
-- Configuring payment gateways and shipping
+Use this skill when the user wants to:
+- Install or update WooCommerce
+- Set up a new store (currency, location, shipping)
+- Manage products, inventory, and pricing
+- Process or update orders
+- Manage customer accounts
+- Create and manage coupons
+- Configure payment gateways and shipping
 
-## Prerequisites
+## Installing WooCommerce
 
-- WooCommerce 3.0.0+ installed and active
-- WP-CLI installed
+If the user asks to "install WooCommerce" or "set up a store":
 
-Check availability:
 ```bash
-wp wc --info
+# For WordPress Studio local development
+studio wp plugin install woocommerce --activate
+
+# For standard WordPress
+wp plugin install woocommerce --activate
+```
+
+After installation, help them configure basic store settings:
+```bash
+# Set store location (UK example)
+studio wp wc setting update general woocommerce_default_country --value="GB"
+
+# Set currency
+studio wp wc setting update general woocommerce_currency --value="GBP"
+
+# Enable tax if needed
+studio wp option update woocommerce_calc_taxes yes
+```
+
+## Prerequisites (After Installation)
+
+Verify WooCommerce is working:
+```bash
+studio wp wc --info
 ```
 
 ## Products
