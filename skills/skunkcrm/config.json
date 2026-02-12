@@ -1,0 +1,8 @@
+{
+  "name": "skunkcrm",
+  "version": "1.0.0",
+  "description": "Manage SkunkCRM contacts, deals, activities, automations, and campaigns",
+  "author": "Skunk Global",
+  "tags": ["crm", "wordpress", "contacts", "deals", "email", "automation"],
+  "requires": []
+}
