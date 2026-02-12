@@ -1,0 +1,8 @@
+{
+  "name": "wordpress-studio",
+  "version": "1.0.0",
+  "description": "Manage local WordPress sites with WordPress Studio CLI",
+  "author": "Skunk Global",
+  "tags": ["wordpress", "studio", "local-dev", "wp-cli"],
+  "requires": ["studio"]
+}
