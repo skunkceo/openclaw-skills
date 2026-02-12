@@ -21,19 +21,13 @@ That's it. The skill is automatically available on your next session.
 
 ## Requirements
 
-- **WP-CLI** must be installed on the target server
-- **SSH access** to remote WordPress sites (for remote checks)
-- Database access for optimization checks
+- **WP-CLI** installed on the WordPress server
 
-### Setting Up Remote Access
+**Optional (for remote sites only):**
+- SSH access — only needed if OpenClaw runs on a different server than WordPress
+- Database access — only needed for optimization checks
 
-For remote sites, set these environment variables:
-```bash
-export WP_CLI_SSH_HOST="user@yourserver.com"
-export WP_CLI_SSH_PATH="/var/www/html"
-```
-
-Or configure SSH in your `~/.ssh/config` for easier access.
+If OpenClaw runs on the same server as WordPress, no extra setup needed.
 
 ## Usage
 
