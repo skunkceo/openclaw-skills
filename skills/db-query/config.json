@@ -1,8 +1,8 @@
 {
   "name": "db-query",
   "version": "1.0.0",
-  "description": "Skill placeholder - documentation coming soon",
+  "description": "Run SQL queries against MySQL, PostgreSQL, or SQLite databases",
   "author": "Skunk Global",
-  "tags": [],
+  "tags": ["database", "sql", "mysql", "postgresql", "sqlite"],
   "requires": []
 }

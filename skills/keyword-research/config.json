@@ -1,8 +1,8 @@
 {
   "name": "keyword-research",
   "version": "1.0.0",
-  "description": "Skill placeholder - documentation coming soon",
+  "description": "Research keywords and analyze search intent for content planning",
   "author": "Skunk Global",
-  "tags": [],
+  "tags": ["seo", "keywords", "content", "research", "marketing"],
   "requires": []
 }

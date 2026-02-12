@@ -1,8 +1,8 @@
 {
   "name": "woocommerce-manager",
   "version": "1.0.0",
-  "description": "Skill placeholder - documentation coming soon",
+  "description": "Manage WooCommerce stores, orders, products, and customers",
   "author": "Skunk Global",
-  "tags": [],
+  "tags": ["woocommerce", "wordpress", "ecommerce", "orders", "products"],
   "requires": []
 }

@@ -1,8 +1,8 @@
 {
   "name": "gsc-reporter",
   "version": "1.0.0",
-  "description": "Skill placeholder - documentation coming soon",
+  "description": "Pull Google Search Console data and generate SEO performance reports",
   "author": "Skunk Global",
-  "tags": [],
+  "tags": ["seo", "google", "search-console", "analytics", "reporting"],
   "requires": []
 }

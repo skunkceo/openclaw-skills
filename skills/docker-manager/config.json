@@ -1,8 +1,8 @@
 {
   "name": "docker-manager",
   "version": "1.0.0",
-  "description": "Skill placeholder - documentation coming soon",
+  "description": "Manage Docker containers, images, and compose stacks",
   "author": "Skunk Global",
-  "tags": [],
-  "requires": []
+  "tags": ["docker", "containers", "devops", "infrastructure"],
+  "requires": ["docker"]
 }

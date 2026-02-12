@@ -1,8 +1,8 @@
 {
   "name": "social-scheduler",
   "version": "1.0.0",
-  "description": "Skill placeholder - documentation coming soon",
+  "description": "Schedule and manage social media posts across platforms",
   "author": "Skunk Global",
-  "tags": [],
+  "tags": ["social-media", "twitter", "linkedin", "scheduling", "marketing"],
   "requires": []
 }

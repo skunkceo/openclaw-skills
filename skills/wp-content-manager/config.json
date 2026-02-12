@@ -1,8 +1,8 @@
 {
   "name": "wp-content-manager",
   "version": "1.0.0",
-  "description": "Skill placeholder - documentation coming soon",
+  "description": "Create, edit, and manage WordPress posts, pages, and media",
   "author": "Skunk Global",
-  "tags": [],
+  "tags": ["wordpress", "content", "posts", "pages", "cms", "wp-cli"],
   "requires": []
 }

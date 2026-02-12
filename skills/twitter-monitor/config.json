@@ -1,8 +1,8 @@
 {
   "name": "twitter-monitor",
   "version": "1.0.0",
-  "description": "Skill placeholder - documentation coming soon",
+  "description": "Monitor Twitter/X for mentions, keywords, and industry trends",
   "author": "Skunk Global",
-  "tags": [],
+  "tags": ["twitter", "social-media", "monitoring", "brand", "marketing"],
   "requires": []
 }

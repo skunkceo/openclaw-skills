@@ -1,8 +1,8 @@
 {
   "name": "calendar-sync",
   "version": "1.0.0",
-  "description": "Skill placeholder - documentation coming soon",
+  "description": "Connect and sync calendar events with your AI assistant",
   "author": "Skunk Global",
-  "tags": [],
+  "tags": ["calendar", "google", "scheduling", "meetings", "productivity"],
   "requires": []
 }

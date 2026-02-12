@@ -1,8 +1,8 @@
 {
   "name": "notion-connector",
   "version": "1.0.0",
-  "description": "Skill placeholder - documentation coming soon",
+  "description": "Read and write to Notion pages, databases, and blocks",
   "author": "Skunk Global",
-  "tags": [],
+  "tags": ["notion", "productivity", "database", "wiki", "documentation"],
   "requires": []
 }

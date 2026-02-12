@@ -1,8 +1,8 @@
 {
   "name": "slack-bot",
   "version": "1.0.0",
-  "description": "Skill placeholder - documentation coming soon",
+  "description": "Send messages, manage channels, and automate Slack workflows",
   "author": "Skunk Global",
-  "tags": [],
+  "tags": ["slack", "messaging", "communication", "automation"],
   "requires": []
 }

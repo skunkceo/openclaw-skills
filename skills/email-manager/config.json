@@ -1,8 +1,8 @@
 {
   "name": "email-manager",
   "version": "1.0.0",
-  "description": "Skill placeholder - documentation coming soon",
+  "description": "Read, send, and organize emails through your AI assistant",
   "author": "Skunk Global",
-  "tags": [],
+  "tags": ["email", "imap", "smtp", "gmail", "communication"],
   "requires": []
 }
