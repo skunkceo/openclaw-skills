@@ -13,7 +13,7 @@ Read, send, and organize emails through your AI assistant.
 ## Installation
 
 ```bash
-clawhub install email-manager
+skunk install email-manager
 ```
 
 ## Requirements

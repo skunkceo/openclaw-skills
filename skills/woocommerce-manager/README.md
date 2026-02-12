@@ -13,7 +13,7 @@ Manage WooCommerce stores, orders, products, and customers.
 ## Installation
 
 ```bash
-clawhub install woocommerce-manager
+skunk install woocommerce-manager
 ```
 
 ## Requirements

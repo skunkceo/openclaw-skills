@@ -14,7 +14,7 @@ This skill lets your AI assistant monitor and audit WordPress sites by:
 ## Installation
 
 ```bash
-clawhub install wp-site-health
+skunk install wp-site-health
 ```
 
 That's it. The skill is automatically available on your next session.

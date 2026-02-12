@@ -13,7 +13,7 @@ Schedule and manage social media posts across platforms.
 ## Installation
 
 ```bash
-clawhub install social-scheduler
+skunk install social-scheduler
 ```
 
 ## Requirements

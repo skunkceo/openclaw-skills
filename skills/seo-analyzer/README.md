@@ -14,7 +14,7 @@ Analyze web pages for SEO issues and get prioritized optimization recommendation
 ## Installation
 
 ```bash
-clawhub install seo-analyzer
+skunk install seo-analyzer
 ```
 
 ## Requirements

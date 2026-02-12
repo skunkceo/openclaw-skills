@@ -13,7 +13,7 @@ Monitor Twitter/X for mentions, keywords, and industry trends.
 ## Installation
 
 ```bash
-clawhub install twitter-monitor
+skunk install twitter-monitor
 ```
 
 ## Requirements

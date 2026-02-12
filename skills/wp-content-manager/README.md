@@ -13,7 +13,7 @@ Create, edit, and manage WordPress posts, pages, and media.
 ## Installation
 
 ```bash
-clawhub install wp-content-manager
+skunk install wp-content-manager
 ```
 
 ## Requirements

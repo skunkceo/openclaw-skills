@@ -12,7 +12,7 @@ Manage local WordPress sites using WordPress Studio CLI.
 ## Installation
 
 ```bash
-clawhub install wordpress-studio
+skunk install wordpress-studio
 ```
 
 ## Requirements

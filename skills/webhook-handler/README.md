@@ -13,7 +13,7 @@ Create, manage, and respond to incoming webhooks.
 ## Installation
 
 ```bash
-clawhub install webhook-handler
+skunk install webhook-handler
 ```
 
 ## Requirements

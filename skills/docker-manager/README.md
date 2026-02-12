@@ -14,7 +14,7 @@ Manage Docker containers, images, and compose stacks from your AI assistant.
 ## Installation
 
 ```bash
-clawhub install docker-manager
+skunk install docker-manager
 ```
 
 ## Requirements

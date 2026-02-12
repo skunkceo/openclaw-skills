@@ -13,7 +13,7 @@ Manage repositories, pull requests, issues, and GitHub Actions from your AI assi
 ## Installation
 
 ```bash
-clawhub install github-manager
+skunk install github-manager
 ```
 
 ## Requirements

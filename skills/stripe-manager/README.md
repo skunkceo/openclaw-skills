@@ -13,7 +13,7 @@ Manage Stripe subscriptions, customers, and payments.
 ## Installation
 
 ```bash
-clawhub install stripe-manager
+skunk install stripe-manager
 ```
 
 ## Requirements

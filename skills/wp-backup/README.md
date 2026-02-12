@@ -13,7 +13,7 @@ Create and manage WordPress site backups.
 ## Installation
 
 ```bash
-clawhub install wp-backup
+skunk install wp-backup
 ```
 
 ## Requirements

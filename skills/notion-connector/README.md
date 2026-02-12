@@ -13,7 +13,7 @@ Read and write to Notion pages, databases, and blocks.
 ## Installation
 
 ```bash
-clawhub install notion-connector
+skunk install notion-connector
 ```
 
 ## Requirements

@@ -13,7 +13,7 @@ Pull Google Search Console data and generate SEO performance reports.
 ## Installation
 
 ```bash
-clawhub install gsc-reporter
+skunk install gsc-reporter
 ```
 
 ## Requirements

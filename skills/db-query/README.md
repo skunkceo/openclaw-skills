@@ -13,7 +13,7 @@ Run SQL queries against MySQL, PostgreSQL, or SQLite databases.
 ## Installation
 
 ```bash
-clawhub install db-query
+skunk install db-query
 ```
 
 ## Requirements

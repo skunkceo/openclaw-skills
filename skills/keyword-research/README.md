@@ -14,7 +14,7 @@ Research keywords and analyze search intent for content planning.
 ## Installation
 
 ```bash
-clawhub install keyword-research
+skunk install keyword-research
 ```
 
 ## Requirements

@@ -13,7 +13,7 @@ Send messages, manage channels, and automate Slack workflows.
 ## Installation
 
 ```bash
-clawhub install slack-bot
+skunk install slack-bot
 ```
 
 ## Requirements

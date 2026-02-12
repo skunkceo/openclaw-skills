@@ -13,7 +13,7 @@ Connect and sync calendar events with your AI assistant.
 ## Installation
 
 ```bash
-clawhub install calendar-sync
+skunk install calendar-sync
 ```
 
 ## Requirements
