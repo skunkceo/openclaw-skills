@@ -13,21 +13,11 @@ This skill lets your AI assistant monitor and audit WordPress sites by:
 
 ## Installation
 
-1. Copy the `wp-site-health` folder to your OpenClaw skills directory:
-   ```bash
-   cp -r wp-site-health ~/.config/clawdbot/skills/
-   ```
+```bash
+clawhub install wp-site-health
+```
 
-2. Add to your Clawdbot config (`config.yaml`):
-   ```yaml
-   skills:
-     - wp-site-health
-   ```
-
-3. Restart Clawdbot:
-   ```bash
-   clawdbot gateway restart
-   ```
+That's it. The skill is automatically available on your next session.
 
 ## Requirements
 
