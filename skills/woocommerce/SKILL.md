@@ -25,6 +25,18 @@ studio wp plugin install woocommerce --activate
 wp plugin install woocommerce --activate
 ```
 
+**Important:** After activation, ALWAYS run the database update to ensure all tables are created properly. Some environments (especially local dev like WordPress Studio) may have restrictive DB permissions that prevent table creation during activation:
+
+```bash
+# Run database update to create all required tables
+studio wp wc update  # or: wp wc update
+
+# Verify it worked (should show no pending updates)
+studio wp wc update --dry-run
+```
+
+If you see errors about missing tables (like `wp_wc_reserved_stock`), this usually means the DB user lacks CREATE privileges. The `wp wc update` command will retry table creation.
+
 After installation, help them configure basic store settings:
 ```bash
 # Set store location (UK example)
@@ -251,6 +263,35 @@ wp wc order_note create 456 --note="Tracking: ABC123" --customer_note=true
 
 # Complete order
 wp wc shop_order update 456 --status=completed
+```
+
+## Troubleshooting
+
+### Table creation failed (wp_wc_reserved_stock, etc.)
+
+If you see errors like "WooCommerce `wp_wc_reserved_stock` table creation failed" during or after activation:
+
+```bash
+# 1. Check database health
+studio wp db check
+
+# 2. Force WooCommerce to recreate tables
+studio wp wc update
+
+# 3. If that doesn't work, try deactivate/reactivate
+studio wp plugin deactivate woocommerce
+studio wp plugin activate woocommerce
+studio wp wc update
+```
+
+This commonly happens in WordPress Studio or local dev environments with restrictive MySQL permissions.
+
+### WooCommerce commands not working
+
+If `wp wc` commands fail, check WooCommerce REST API is enabled:
+```bash
+studio wp option get woocommerce_api_enabled
+studio wp option update woocommerce_api_enabled yes
 ```
 
 ## Reference
