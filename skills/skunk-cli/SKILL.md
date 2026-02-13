@@ -68,6 +68,35 @@ Output:
 - skunkforms / skunkforms-pro
 - skunkpages / skunkpages-pro
 
+### Check Plugin Versions
+
+```bash
+# Show all latest versions
+skunk versions
+
+# Show version of a specific plugin
+skunk version crm        # or: skunk version skunkcrm
+skunk version forms
+skunk version pages
+```
+
+### Check Status (with installed comparison)
+
+```bash
+skunk status
+```
+
+If run inside a WordPress site (WP-CLI or Studio available), compares installed versions against latest and shows what needs updating.
+
+Output example:
+```
+Plugin            Latest      Installed
+──────────────────────────────────────────────────
+skunkcrm          0.2.23      0.2.20 → 0.2.23
+skunkforms        1.1.5       1.1.5 ✓
+skunkpages        1.0.2       not installed
+```
+
 ### Update CLI and Skills
 
 ```bash
