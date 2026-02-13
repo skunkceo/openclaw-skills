@@ -2,6 +2,22 @@
 
 Manage CRM contacts, activities, deals, and campaigns via WP-CLI.
 
+## Installation
+
+```bash
+# Install the WordPress plugin
+skunk install plugin skunkcrm
+
+# For Pro features (deals, campaigns, automations)
+skunk install plugin skunkcrm-pro --license=YOUR_LICENSE_KEY
+
+# Or via WP-CLI directly
+wp plugin install https://skunkcrm.com/api/download/free --activate
+
+# Or via WordPress Studio
+studio wp plugin install https://skunkcrm.com/api/download/free --activate
+```
+
 ## When to Use
 
 Use this skill when:
