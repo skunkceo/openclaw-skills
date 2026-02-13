@@ -1,0 +1,8 @@
+{
+  "name": "wp-site-health",
+  "version": "1.0.0",
+  "description": "Check plugin updates, security status, and performance metrics for WordPress sites",
+  "author": "Skunk Global",
+  "tags": ["wordpress", "security", "monitoring", "health-check", "wp-cli"],
+  "requires": ["wp-cli"]
+}

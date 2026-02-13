@@ -1,0 +1,8 @@
+{
+  "name": "webhook-handler",
+  "version": "1.0.0",
+  "description": "Create, manage, and respond to incoming webhooks",
+  "author": "Skunk Global",
+  "tags": ["webhooks", "api", "automation", "integration"],
+  "requires": []
+}

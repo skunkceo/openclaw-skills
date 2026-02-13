@@ -1,0 +1,8 @@
+{
+  "name": "social-scheduler",
+  "version": "1.0.0",
+  "description": "Schedule and manage social media posts across platforms",
+  "author": "Skunk Global",
+  "tags": ["social-media", "twitter", "linkedin", "scheduling", "marketing"],
+  "requires": []
+}

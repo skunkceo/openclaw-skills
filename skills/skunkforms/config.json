@@ -1,0 +1,8 @@
+{
+  "name": "skunkforms",
+  "version": "1.0.0",
+  "description": "Manage SkunkForms forms and submissions",
+  "author": "Skunk Global",
+  "tags": ["forms", "wordpress", "submissions", "contact-forms", "gutenberg"],
+  "requires": []
+}

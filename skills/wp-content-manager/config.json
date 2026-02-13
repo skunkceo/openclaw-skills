@@ -1,0 +1,8 @@
+{
+  "name": "wp-content-manager",
+  "version": "1.0.0",
+  "description": "Create, edit, and manage WordPress posts, pages, and media",
+  "author": "Skunk Global",
+  "tags": ["wordpress", "content", "posts", "pages", "cms", "wp-cli"],
+  "requires": []
+}

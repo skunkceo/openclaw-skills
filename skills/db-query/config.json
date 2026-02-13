@@ -1,0 +1,8 @@
+{
+  "name": "db-query",
+  "version": "1.0.0",
+  "description": "Run SQL queries against MySQL, PostgreSQL, or SQLite databases",
+  "author": "Skunk Global",
+  "tags": ["database", "sql", "mysql", "postgresql", "sqlite"],
+  "requires": []
+}

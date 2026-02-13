@@ -1,0 +1,8 @@
+{
+  "name": "email-manager",
+  "version": "1.0.0",
+  "description": "Read, send, and organize emails through your AI assistant",
+  "author": "Skunk Global",
+  "tags": ["email", "imap", "smtp", "gmail", "communication"],
+  "requires": []
+}

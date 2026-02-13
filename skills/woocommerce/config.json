@@ -1,0 +1,8 @@
+{
+  "name": "woocommerce-manager",
+  "version": "1.0.0",
+  "description": "Manage WooCommerce stores, orders, products, and customers",
+  "author": "Skunk Global",
+  "tags": ["woocommerce", "wordpress", "ecommerce", "orders", "products"],
+  "requires": []
+}

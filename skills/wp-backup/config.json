@@ -1,0 +1,8 @@
+{
+  "name": "wp-backup",
+  "version": "1.0.0",
+  "description": "Create and manage WordPress site backups",
+  "author": "Skunk Global",
+  "tags": ["wordpress", "backup", "database", "disaster-recovery", "wp-cli"],
+  "requires": ["wp-cli"]
+}

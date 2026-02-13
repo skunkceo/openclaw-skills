@@ -1,0 +1,8 @@
+{
+  "name": "stripe-manager",
+  "version": "1.0.0",
+  "description": "Manage Stripe subscriptions, customers, and payments",
+  "author": "Skunk Global",
+  "tags": ["stripe", "payments", "subscriptions", "billing", "saas"],
+  "requires": []
+}

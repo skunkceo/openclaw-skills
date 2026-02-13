@@ -1,0 +1,8 @@
+{
+  "name": "twitter-monitor",
+  "version": "1.0.0",
+  "description": "Monitor Twitter/X for mentions, keywords, and industry trends",
+  "author": "Skunk Global",
+  "tags": ["twitter", "social-media", "monitoring", "brand", "marketing"],
+  "requires": []
+}

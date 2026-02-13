@@ -1,0 +1,8 @@
+{
+  "name": "docker-manager",
+  "version": "1.0.0",
+  "description": "Manage Docker containers, images, and compose stacks",
+  "author": "Skunk Global",
+  "tags": ["docker", "containers", "devops", "infrastructure"],
+  "requires": ["docker"]
+}

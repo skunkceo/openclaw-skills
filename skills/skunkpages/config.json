@@ -1,0 +1,8 @@
+{
+  "name": "skunkpages",
+  "version": "1.0.0",
+  "description": "Manage SkunkPages landing pages and templates",
+  "author": "Skunk Global",
+  "tags": ["landing-pages", "wordpress", "templates", "gutenberg", "page-builder"],
+  "requires": []
+}

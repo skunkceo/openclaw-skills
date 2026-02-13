@@ -1,0 +1,8 @@
+{
+  "name": "gsc-reporter",
+  "version": "1.0.0",
+  "description": "Pull Google Search Console data and generate SEO performance reports",
+  "author": "Skunk Global",
+  "tags": ["seo", "google", "search-console", "analytics", "reporting"],
+  "requires": []
+}
