@@ -2,6 +2,22 @@
 
 Manage forms and submissions via WP-CLI.
 
+## Installation
+
+```bash
+# Install the WordPress plugin
+skunk install plugin skunkforms
+
+# For Pro features
+skunk install plugin skunkforms-pro --license=YOUR_LICENSE_KEY
+
+# Or via WP-CLI directly
+wp plugin install https://skunkforms.com/api/download/free --activate
+
+# Or via WordPress Studio
+studio wp plugin install https://skunkforms.com/api/download/free --activate
+```
+
 ## When to Use
 
 Use this skill when:
