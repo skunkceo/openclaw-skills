@@ -2,6 +2,29 @@
 
 Install and manage WooCommerce stores via WP-CLI. Products, orders, customers, coupons, and settings.
 
+## ⚠️ Critical: SQLite Incompatibility
+
+**WooCommerce does NOT work with SQLite databases.** WordPress Studio uses SQLite by default, which causes errors like:
+
+- `wp_wc_reserved_stock table creation failed`
+- `wp_actionscheduler_*` tables failing
+- Action Scheduler errors with `FOR UPDATE` syntax
+
+**Before installing WooCommerce, check the database type:**
+```bash
+# Check if using SQLite (WordPress Studio)
+studio wp eval "echo defined('DB_ENGINE') ? DB_ENGINE : 'mysql';"
+
+# If it returns 'sqlite', WooCommerce won't work properly
+```
+
+**Solutions:**
+1. Use MySQL/MariaDB instead of SQLite (recommended for WooCommerce)
+2. Use Local by Flywheel, MAMP, or Docker with MySQL
+3. Use a remote WordPress host with MySQL
+
+If the user is on WordPress Studio with SQLite, **warn them before proceeding** — WooCommerce will partially install but have persistent table errors.
+
 ## When to Use
 
 Use this skill when the user wants to:
@@ -12,20 +35,23 @@ Use this skill when the user wants to:
 - Manage customer accounts
 - Create and manage coupons
 - Configure payment gateways and shipping
+- **Diagnose WooCommerce issues** (table errors, setup problems)
 
 ## Installing WooCommerce
 
 If the user asks to "install WooCommerce" or "set up a store":
 
+**First, check the database type** (see SQLite warning above). Then:
+
 ```bash
-# For WordPress Studio local development
+# For WordPress Studio (MySQL mode only!)
 studio wp plugin install woocommerce --activate
 
 # For standard WordPress
 wp plugin install woocommerce --activate
 ```
 
-**Important:** After activation, ALWAYS run the database update to ensure all tables are created properly. Some environments (especially local dev like WordPress Studio) may have restrictive DB permissions that prevent table creation during activation:
+**Important:** After activation, run the database update to ensure all tables are created:
 
 ```bash
 # Run database update to create all required tables
@@ -34,8 +60,6 @@ studio wp wc update  # or: wp wc update
 # Verify it worked (should show no pending updates)
 studio wp wc update --dry-run
 ```
-
-If you see errors about missing tables (like `wp_wc_reserved_stock`), this usually means the DB user lacks CREATE privileges. The `wp wc update` command will retry table creation.
 
 After installation, help them configure basic store settings:
 ```bash
@@ -265,35 +289,106 @@ wp wc order_note create 456 --note="Tracking: ABC123" --customer_note=true
 wp wc shop_order update 456 --status=completed
 ```
 
-## Troubleshooting
+## Troubleshooting & Diagnostics
 
-### Table creation failed (wp_wc_reserved_stock, etc.)
+When the user reports WooCommerce issues, run through this diagnostic flow:
 
-If you see errors like "WooCommerce `wp_wc_reserved_stock` table creation failed" during or after activation:
+### Step 1: Check Database Type
 
 ```bash
-# 1. Check database health
-studio wp db check
+# Check database engine
+studio wp eval "echo defined('DB_ENGINE') ? DB_ENGINE : (defined('DB_HOST') ? 'mysql' : 'unknown');"
 
-# 2. Force WooCommerce to recreate tables
+# Check wp-config for sqlite
+studio wp eval "echo file_exists(ABSPATH . 'wp-content/db.php') ? 'SQLite adapter present' : 'No SQLite adapter';"
+```
+
+**If SQLite is detected:** WooCommerce will NOT work properly. The user needs MySQL/MariaDB. Explain this clearly and stop — no amount of troubleshooting will fix SQLite incompatibility.
+
+### Step 2: Check WooCommerce Tables
+
+```bash
+# List all WooCommerce tables
+studio wp db query "SHOW TABLES LIKE '%woocommerce%';" --skip-column-names
+studio wp db query "SHOW TABLES LIKE '%wc_%';" --skip-column-names
+
+# Expected tables (check these exist):
+# - wp_wc_admin_notes, wp_wc_admin_note_actions
+# - wp_wc_customer_lookup, wp_wc_order_stats
+# - wp_wc_product_meta_lookup
+# - wp_wc_reserved_stock (this one often fails)
+# - wp_wc_webhooks
+
+# Check Action Scheduler tables (also required):
+studio wp db query "SHOW TABLES LIKE '%actionscheduler%';" --skip-column-names
+```
+
+### Step 3: Check MySQL Privileges (if MySQL)
+
+```bash
+# Check current user privileges
+studio wp db query "SHOW GRANTS FOR CURRENT_USER();" 2>/dev/null
+
+# Test CREATE privilege
+studio wp db query "CREATE TABLE IF NOT EXISTS wp_wc_test_permissions (id INT); DROP TABLE IF EXISTS wp_wc_test_permissions;"
+```
+
+If CREATE fails, the MySQL user needs additional privileges:
+```sql
+GRANT CREATE, ALTER, DROP ON database_name.* TO 'username'@'localhost';
+FLUSH PRIVILEGES;
+```
+
+### Step 4: Force Table Recreation
+
+```bash
+# Update WooCommerce database
 studio wp wc update
 
-# 3. If that doesn't work, try deactivate/reactivate
+# Check for pending updates
+studio wp wc update --dry-run
+
+# Nuclear option: deactivate, clear transients, reactivate
 studio wp plugin deactivate woocommerce
+studio wp transient delete --all
 studio wp plugin activate woocommerce
 studio wp wc update
 ```
 
-This commonly happens in WordPress Studio or local dev environments with restrictive MySQL permissions.
+### Step 5: Check WooCommerce Status
 
-### WooCommerce commands not working
-
-If `wp wc` commands fail, check WooCommerce REST API is enabled:
 ```bash
+# System status (shows database issues)
+studio wp wc --info
+
+# Check for fatal errors in log
+studio wp eval "if (defined('WC_LOG_DIR')) { echo file_get_contents(WC_LOG_DIR . 'fatal-errors.log'); }"
+```
+
+### Common Issues Summary
+
+| Error | Cause | Fix |
+|-------|-------|-----|
+| `wp_wc_reserved_stock` table failed | SQLite or missing CREATE privilege | Use MySQL; grant CREATE |
+| `FOR UPDATE` syntax error | SQLite database | Switch to MySQL |
+| `actionscheduler` errors | SQLite incompatibility | Switch to MySQL |
+| `wp wc` commands fail | REST API disabled | Enable API (see below) |
+
+### WooCommerce Commands Not Working
+
+If `wp wc` commands fail:
+```bash
+# Check REST API enabled
 studio wp option get woocommerce_api_enabled
+
+# Enable if needed
 studio wp option update woocommerce_api_enabled yes
+
+# Clear REST cache
+studio wp transient delete wc_rest_api_*
 ```
 
 ## Reference
 
-Full docs: https://developer.woocommerce.com/docs/wc-cli/wc-cli-commands/
+- WC-CLI docs: https://developer.woocommerce.com/docs/wc-cli/wc-cli-commands/
+- SQLite limitations: WordPress Studio SQLite is not compatible with WooCommerce
