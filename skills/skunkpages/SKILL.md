@@ -2,6 +2,22 @@
 
 Manage landing pages and templates via WP-CLI.
 
+## Installation
+
+```bash
+# Install the WordPress plugin
+skunk install plugin skunkpages
+
+# For Pro features (create, duplicate, schedule)
+skunk install plugin skunkpages-pro --license=YOUR_LICENSE_KEY
+
+# Or via WP-CLI directly
+wp plugin install https://skunkpages.com/api/download/free --activate
+
+# Or via WordPress Studio
+studio wp plugin install https://skunkpages.com/api/download/free --activate
+```
+
 ## When to Use
 
 Use this skill when:
