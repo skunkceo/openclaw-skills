@@ -1,0 +1,8 @@
+{
+  "name": "linear",
+  "version": "1.0.0",
+  "description": "Interact with Linear project management — create, update, list, and manage issues",
+  "author": "Skunk Global",
+  "tags": ["linear", "project-management", "issues", "tasks", "sprint", "backlog"],
+  "requires": ["curl", "jq"]
+}
